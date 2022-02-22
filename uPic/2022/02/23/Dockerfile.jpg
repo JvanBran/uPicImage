@@ -1,0 +1,4 @@
+FROM ubuntu:18.04
+# 安装curl
+# ubuntu默认使用sh，helm安装脚本需要使用bash，这里切换一下默认的sh为bash以执行helm
+RUN apt-get -y update && apt-get install -y curl tar && rm /bin/sh && ln -s /bin/bash /bin/sh && curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash 
